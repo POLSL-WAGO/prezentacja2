@@ -1,0 +1,24 @@
+body{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    background-color: #454c4c;
+}
+
+button{
+    width: 70%;
+    margin: 10px;
+}
+
+a{
+    color: white;
+}
+
+footer{
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom:0;
+    width: 70%;
+	height:60px;
+}
