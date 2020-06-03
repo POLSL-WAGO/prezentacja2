@@ -22,3 +22,8 @@ footer{
     width: 70%;
 	height:60px;
 }
+
+#name{
+    font-size: 30px;
+    font-style: bold;
+}
