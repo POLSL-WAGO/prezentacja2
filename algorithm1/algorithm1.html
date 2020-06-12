@@ -21,14 +21,32 @@
     />
     <link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
+
 <body>
+    
     <div>
         <a href="../index.html"><button class="btn btn-primary btn-lg">Strona główna</button></a><br />
-        <p id="name">Nazwa algorytmu [numer z listy problemów]</p>
+        <p id="name">Sprawdzanie ile punktów znajduje się w prostokącie</p>
+    </div>
+    <canvas width="500" height="500" id="myCanvas"></canvas>
+    <div>
+        <div id="result"></div>
+        <button onclick="rectangleCheck(250, 250, 100, 150, 0, 50)">ZAŁADUJ PRZYKŁADOWE</button>
+        <p>Wprowadź współrzędne środka prostokąta</p>
+        X: <input type="number" id="rec_x" /><br />
+        Y: <input type="number" id="rec_y" /><br />
+        <p>Wprowadź wysokość oraz szerokość figury:</p>
+        Wysokość: <input type="number" id="rec_h" /><br />
+        Szerokość: <input type="number" id="rec_w" /><br />
+        Kolor: <input type="color" id="rec_color" /><br /><p>Ile punktów chcesz wylosować:</p>
+        <input type="number" id="pkt_size" /><br />
+        <button id="check" onclick="rectangleCheck(rec_x.value, rec_y.value, rec_h.value, rec_w.value, rec_color.value, pkt_size.value)" >NARYSUJ I SPRAWDŹ</button>
     </div>
     <footer class="page-footer">
         Autorzy: Kuśmierz Wojciech, Rojek Marcin, Wiśniewski Mateusz<br />
         Rok akademicki 2019/20
     </footer>
 </body>
+    <script src="../drawlib.js"></script>
+    <script src="../random.js"></script>
 </html>

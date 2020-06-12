@@ -5,6 +5,20 @@ body{
     background-color: #454c4c;
 }
 
+canvas {
+    background-color: white;
+    display: block;
+    margin: 50px auto 50px;
+    box-shadow: 0 4px 0 0 #222;
+    cursor: pointer;
+  }
+
+#myCanvas {
+    background-color: white;
+    width: 500px;
+    height: 500px;
+  }
+
 button{
     width: 70%;
     margin: 10px;
@@ -17,13 +31,21 @@ a{
 footer{
     text-align: center;
     color: white;
-    position: absolute;
-    bottom:0;
-    width: 70%;
+    width: 100%;
 	height:60px;
 }
 
 #name{
     font-size: 30px;
     font-style: bold;
+}
+
+#result{
+    font-size: 20px;
+    color:white;
+    font-style: bold;
+}
+
+#check{
+    width: 30%;
 }
