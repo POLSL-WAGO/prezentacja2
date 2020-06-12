@@ -1,17 +1,27 @@
-// constructor(center, radius, color){
-//this.center = center;
-//this.radius = radius;
-//this.color = color;
-//this.type = "circle";
-//  }
+var points = [];
 
-//var Point = {
+var kwadrat = {
+  x: 12,
+  y: 10,
+  w: 100,
+  h: 50,
+};
 
-//x: 12
-// y:10
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-//};
+function generateArray(size, range) {
+  //generuje tablice punktów w argumencie przyjmuje wielkość tablicy
+  for (let index = 0; index < size; index++) {
+    points.push({ x: getRandomIntInclusive(0, range), y: getRandomIntInclusive(0, range) }); //przedział w którym generowane sąpunkty można zmienić
+  }
+}
+
 //zliczanie punktów leżących w prostokącie
+
 function rectangle_points(rect, points) {
   // argumenty funkcji => rect obiekt zawiera wysokość szerokosć i punkt środkowy, points to tablica z obiektami punktów zawiera wartość x i y
   var counter = 0;
@@ -32,3 +42,6 @@ function rectangle_points(rect, points) {
 
   console.log("Liczba punktów w prostokącie" + counter);
 }
+generateArray(100, 200);
+console.log(points);
+rectangle_points(kwadrat, points);
