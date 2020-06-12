@@ -2,8 +2,7 @@
     Wojciech Kuśmierz
     Rojek Marcin
     Wiśniewski Mateusz
-
-    Biblioteka rysująca punkty, okrąg, linie oraz wielokąt na CANVAS
+    
 */
 
 
@@ -80,6 +79,18 @@ function randomPoints(pktRandom){
     }
   }
 
+  function randomPoint(pktRandom){
+    console.log(points);
+    generateArray(pktRandom, 500);
+    for(i = 0; i < pktRandom; i++){
+      if(i == 0){
+        DrawPoint(points[i].x, points[i].y, "red");
+      }else {
+        DrawPoint(points[i].x, points[i].y, "black");
+      }
+    }
+  }
+
   function randomLines(linRandom){
     console.log(linRandom);
     var x1 = 0;
@@ -145,7 +156,6 @@ function rectangle_points(rect, points) {
   console.log("Liczba punktów w prostokącie" + counter);
 }
 
-
 function rectangleCheck(rec_x, rec_y, rec_h, rec_w, rec_color, pkt_size){
   kwadrat.x = rec_x;
   kwadrat.y = rec_y;
@@ -155,3 +165,41 @@ function rectangleCheck(rec_x, rec_y, rec_h, rec_w, rec_color, pkt_size){
   randomPoints(pkt_size);
   rectangle_points(kwadrat, points);
 }
+
+// Algorytm 2
+function d(point) {
+  return Math.pow(point.x, 2) + Math.pow(point.y, 2);
+}
+
+//generateArray(100, 200);
+function closedPoint(pktrandom){
+  randomPoint(pktrandom);
+  var closest = points.slice(1).reduce(
+    function (min, p) {
+      if (d(p) < min.d) min.point = p;
+      return min;
+    },
+    { point: points[0], d: d(points[0]) }
+  ).point;
+
+  console.log(closest);
+  document.getElementById("result").innerHTML = "Współrzędne najbliższego punktu x: " + closest.x + " y: " + closest.y + " do puntku x: " + points[0].x + " y: " + points[0].y;
+  var sortedArray = points.sort(function (a, b) {
+    return a.x - b.x;
+  });
+
+  console.log("war x" + sortedArray[1].x);
+  const ranges = [];
+  for (var index = 0; index < sortedArray.length; index++) {
+    // console.log(
+    //   Math.sqrt(
+    //     Math.pow(Math.abs(sortedArray[index].x - sortedArray[index].x)) +
+    //       Math.pow(Math.abs(sortedArray[index].y - sortedArray[index].y))
+    //   )
+    // );
+    console.log(points[index].y);
+  }
+  console.log("ranges" + ranges);
+}
+//Math.sqrt(Math.pow(Math.abs(x1 - x2)) + Math.pow(Math.abs(y1 - y2)))
+///// kod wyżej znajduje punkt który jest najbliżej pierwszemu punkowi w tablicy

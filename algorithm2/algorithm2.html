@@ -24,7 +24,15 @@
 <body>
     <div>
         <a href="../index.html"><button class="btn btn-primary btn-lg">Strona główna</button></a><br />
-        <p id="name">Nazwa algorytmu [numer z listy problemów]</p>
+        <p id="name">Sprawdzanie najbliższego punktu do punktu</p>
+    </div>
+    <canvas width="500" height="500" id="myCanvas"></canvas>
+    <div>
+        <div id="result"></div>
+        <button onclick="closedPoint(10)">ZAŁADUJ LOSOWE 10 PUNKTÓW</button>
+        <p>Ile punktów chcesz wylosować:</p>
+        <input type="number" id="pkt_size" /><br />
+        <button id="check" onclick="closedPoint(pkt_size.value)" >NARYSUJ I SPRAWDŹ</button>
     </div>
 
     <footer class="page-footer">
@@ -32,4 +40,5 @@
         Rok akademicki 2019/20
     </footer>
 </body>
+<script src="../drawlib.js"></script>
 </html>
